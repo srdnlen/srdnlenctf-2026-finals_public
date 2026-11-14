@@ -151,5 +151,5 @@ if __name__ == "__main__":
 
 
 ## Flag
-`srdnlen{vn0de_1nj3ct1on_are_4_th1ng_uh}`
+`srdnlen{d1rty_sock3t_desynchronization_1s_f4n}`
 
