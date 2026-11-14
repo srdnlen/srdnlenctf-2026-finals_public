@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Document Service</title></head>
+<body>
+  <h1>Document Service</h1>
+  <p>Store a document, verify the archive, or preview an export.</p>
+  <input id="document" type="file"><br>
+  <button onclick="upload()">Upload</button>
+  <button onclick="call('/integrity')">Integrity</button>
+  <button onclick="preview()">Preview</button>
+  <pre id="output"></pre>
+  <script>
+    const output = document.getElementById('output');
+    let uploadId = null;
+    async function call(path, options = {}) {
+      const response = await fetch(path, options);
+      output.textContent = await response.text();
+    }
+    async function upload() {
+      const file = document.getElementById('document').files[0];
+      if (!file) {
+        output.textContent = 'Select a document first.';
+        return;
+      }
+      const response = await fetch('/upload?name=' + encodeURIComponent(file.name), {
+        method: 'POST',
+        body: file
+      });
+      const result = await response.json();
+      uploadId = result.id;
+      output.textContent = JSON.stringify(result);
+    }
+    function preview() {
+      call('/preview' + (uploadId === null ? '' : '?id=' + uploadId));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+\documentclass[10pt]{article}
+\usepackage[paperwidth=148mm,paperheight=105mm,margin=7mm]{geometry}
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{ink}{HTML}{0E1A17}
+\definecolor{surface}{HTML}{13231F}
+\definecolor{sand}{HTML}{ECE7DD}
+\definecolor{sage}{HTML}{8FA89B}
+\definecolor{line}{HTML}{26382F}
+\definecolor{flame}{HTML}{F0531F}
+
+\BLOCK{ if role == 'Speaker' }\definecolor{rolehue}{HTML}{C77D11}
+\BLOCK{ elif role == 'Staff' }\definecolor{rolehue}{HTML}{1E8E86}
+\BLOCK{ else }\definecolor{rolehue}{HTML}{F0531F}
+\BLOCK{ endif }
+
+\pagecolor{ink}
+\color{sand}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+
+\newcommand{\lab}[1]{{\color{sage}\fontsize{6}{7}\selectfont\textbf{#1}}}
+
+\begin{document}
+
+\noindent\raisebox{-1.7mm}{\includegraphics[height=6mm]{srdnlen-logo.png}}\hspace{2.6mm}%
+{\fontsize{11}{13}\selectfont\bfseries Sardinia Cyber Camp\,\,II}%
+\hfill\raisebox{1.1mm}{\color{rolehue}\fontsize{7}{9}\selectfont\bfseries \MakeUppercase{\VAR{role}} $\cdot$ ENTRY PASS}
+
+\vspace{3mm}
+\noindent{\color{rolehue}\rule{\linewidth}{1.8pt}}
+
+\vspace{8mm}
+
+\noindent
+\begin{minipage}[c]{\BLOCK{ if has_photo }0.62\BLOCK{ else }1.0\BLOCK{ endif }\linewidth}
+  {\fontsize{23}{26}\selectfont\bfseries \VAR{first_name} \VAR{last_name}}\\[2mm]
+  {\color{rolehue}\fontsize{10}{13}\selectfont @\VAR{nickname}}\\[5mm]
+  {\setlength{\fboxsep}{3.2pt}\colorbox{rolehue}{\textcolor{white}{\fontsize{7}{9}\selectfont\bfseries \VAR{role}}}}%
+  \BLOCK{ if team }\hspace{3mm}{\color{sand}\fontsize{8.5}{11}\selectfont \VAR{team}}\BLOCK{ endif }%
+  \BLOCK{ if staff_title }\hspace{3mm}{\color{sand}\fontsize{8.5}{11}\selectfont \VAR{staff_title}}\BLOCK{ endif }%
+  \BLOCK{ if staff_area or country }\\[3.5mm]
+  {\color{sage}\fontsize{7.5}{11}\selectfont \BLOCK{ if staff_area }\VAR{staff_area}\BLOCK{ endif }\BLOCK{ if staff_area and country } $\cdot$ \BLOCK{ endif }\BLOCK{ if country }\VAR{country}\BLOCK{ endif }}\BLOCK{ endif }%
+  \BLOCK{ if talk_title }\\[5mm]
+  \lab{TALK}\\[1.5mm]
+  {\color{sand}\fontsize{9.5}{12}\selectfont \textbf{\VAR{talk_title}}}%
+  \BLOCK{ endif }\BLOCK{ if talk_abstract }\\[3mm]
+  {\color{sage}\fontsize{7.5}{10}\selectfont \VAR{talk_abstract}}%
+  \BLOCK{ endif }
+\end{minipage}%
+\BLOCK{ if has_photo }\hfill%
+\begin{minipage}[c]{0.32\linewidth}
+  \centering\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+  \fcolorbox{line}{surface}{\includegraphics[width=\linewidth,height=40mm,keepaspectratio]{avatar.png}}
+\end{minipage}\BLOCK{ endif }
+
+\vfill
+\noindent{\color{rolehue}\rule{\linewidth}{1.8pt}}\\[1.4mm]
+\noindent{\color{sage}\fontsize{6.5}{8}\selectfont Cagliari $\cdot$ 28-30 October 2026}%
+\hfill{\color{sage}\fontsize{6.5}{8}\selectfont cybercamp.srdnlen.it}
+
+\end{document}

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>srdnlen - Design Contest</title>
+    <style>
+        @keyframes blink {
+            50% { visibility: hidden; }
+        }
+
+        body {
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 13px;
+            color: #222;
+            margin: 0;
+            padding: 20px;
+            background-color: #d6d6d6;
+            background-image:
+                    radial-gradient(#bdbdbd 1px, transparent 1px);
+            background-size: 4px 4px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 15px;
+            background: #fff;
+            border: 3px ridge #aaa;
+            box-shadow: 5px 5px 0 #888;
+        }
+
+        .topbar {
+            padding: 8px;
+            color: #fff;
+            background: linear-gradient(#333399, #000066);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .banner {
+            text-align: center;
+            padding: 20px 5px;
+            background: #ffffcc;
+            border: 3px double #cc0000;
+        }
+
+        h1 {
+            margin: 5px 0;
+            color: #cc0000;
+            font-family: Georgia, serif;
+            font-size: 38px;
+            text-shadow: 2px 2px #ffcc00;
+        }
+
+        .subtitle {
+            color: #000099;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .construction {
+            margin: 12px 0;
+            padding: 7px;
+            text-align: center;
+            color: #000;
+            background: repeating-linear-gradient(
+                    135deg,
+                    #ffeb00,
+                    #ffeb00 12px,
+                    #111 12px,
+                    #111 24px
+            );
+            font-weight: bold;
+        }
+
+        .construction span {
+            background: #ffeb00;
+            padding: 3px 10px;
+        }
+
+        .nav {
+            margin: 12px 0;
+            padding: 10px;
+            background: #000080;
+            text-align: center;
+        }
+
+        .nav a {
+            color: #fff;
+            font-weight: bold;
+            margin: 0 8px;
+        }
+
+        h2 {
+            padding: 6px;
+            color: #fff;
+            background: #336699;
+            font-size: 16px;
+            border: 2px outset #6699cc;
+        }
+
+        .panel {
+            margin: 15px 0;
+            padding: 12px;
+            background: #f5f5ff;
+            border: 2px inset #ccc;
+        }
+
+        .notice {
+            padding: 10px;
+            color: #660000;
+            background: #ffe4e4;
+            border: 1px dashed #cc0000;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 7px;
+            background: #ffcc00;
+            color: #990000;
+            font-weight: bold;
+            border: 2px outset #fff;
+        }
+
+        input, textarea, button {
+            box-sizing: border-box;
+            max-width: 100%;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 13px;
+            padding: 8px;
+            border: 2px inset #ccc;
+        }
+
+        input, textarea {
+            width: 100%;
+            margin: 6px 0 12px;
+            background: #fff;
+            color: #222;
+        }
+
+        button {
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            background: linear-gradient(#6699cc, #003399);
+            border: 3px outset #6699cc;
+        }
+
+        button:hover {
+            background: linear-gradient(#ff6666, #cc0000);
+        }
+
+        #secret {
+            padding: 15px;
+            margin-top: 10px;
+            background: #ffffcc;
+            border: 2px dashed #cc9900;
+            overflow-wrap: anywhere;
+        }
+
+        .counter {
+            padding: 8px;
+            text-align: center;
+            background: #111;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            font-weight: bold;
+        }
+
+        .blink {
+            color: #cc0000;
+            animation: blink 1s step-end infinite;
+        }
+
+        .small {
+            font-size: 11px;
+            color: #666;
+        }
+
+        a {
+            color: #0000cc;
+        }
+
+        hr {
+            border: 0;
+            border-top: 2px dotted #999;
+            margin: 25px 0;
+        }
+
+        .footer {
+            margin-top: 25px;
+            padding: 12px;
+            background: #eee;
+            border-top: 3px double #999;
+            text-align: center;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="topbar">
+        SRDNLEN Design Contest
+    </div>
+
+    <div class="banner">
+        <div style="font-size: 12px; color: #666;">
+            ★★★ WELCOME TO THE OFFICIAL ★★★
+        </div>
+        <h1>SRDNLEN<br>WEB DESIGN<br>CHAMPIONSHIP!</h1>
+        <div class="subtitle">
+            "Because your homepage says everything about you."
+        </div>
+        <p>
+            <span class="badge">SEASON 2003</span>
+            <span class="badge">HTML WIZARDS WANTED</span>
+        </p>
+    </div>
+
+    <div class="construction">
+        <span>UNDER CONSTRUCTION</span>
+    </div>
+
+    <div class="nav">
+        <a href="#about">ABOUT</a>
+        <a href="#contest">THE CONTEST</a>
+        <a href="#guestbook">GUESTBOOK</a>
+        <a href="#submit">SUBMIT YOUR STYLE</a>
+    </div>
+
+    <div class="counter">
+        YOU ARE VISITOR # 00018472
+    </div>
+
+    <h2 id="about">Welcome, Fellow Webmaster!</h2>
+
+    <p>
+        Think you have what it takes to build the greatest
+        website? Are your animated GIFs smoother than
+        everyone else's? Is your MIDI background music simply
+        unforgettable?
+    </p>
+
+    <p>
+        Then welcome to the srdnlen Web Design Championship, where
+        webmasters compete for eternal Internet glory
+        and a shiny badge for their personal homepage.
+    </p>
+
+    <div class="panel">
+        <strong>FROM THE HEAD JUDGE:</strong>
+        <p>
+            "I've been building websites since 1997. I know
+            every trick in the book. If your page uses frames,
+            Comic Sans, and at least three animated banners,
+            you might just have a chance."
+        </p>
+        <div class="small">— justlel, Chief Judge</div>
+    </div>
+
+    <h2 id="contest">Round 2: The Ultimate Customization Test</h2>
+
+    <p>
+        Every contestant gets access to our exclusive CSS
+        playground. Customize the championship page and show
+        the judges what real web design looks like!
+    </p>
+
+    <div class="notice">
+        <strong>
+            IMPORTANT NOTICE:
+            Your design will be visited by our official judge
+            before it can qualify for the final round.
+        </strong>
+    </div>
+
+    <h2>Bank Account Number</h2>
+
+    <p>
+        Enter the bank account number to which
+        the prize will be credited.
+    </p>
+
+    <form method="POST" action="/set-cookie?css={{ css_b64 }}">
+        <input
+                type="text"
+                name="secret"
+                placeholder="Account No."
+        >
+        <button type="submit">SAVE MY PROFILE</button>
+    </form>
+
+    <div id="secret">YOUR BANK ACCOUNT: {{ secret }}</div>
+
+    <hr>
+
+    <h2>Make This Page AWESOME!</h2>
+
+    <p>
+        Enter your custom CSS below. Change the colors, fonts,
+        borders, layout — anything you want. This is YOUR
+        chance to become a legend.
+    </p>
+
+    <textarea
+            id="cssInput"
+            rows="12"
+            placeholder="body { background: hotpink; }"
+    >{{ css }}</textarea>
+
+    <button id="applyCss">
+        APPLY MY AWESOME DESIGN
+    </button>
+
+    <hr>
+
+    <h2 id="guestbook">Guestbook</h2>
+
+    <div class="panel">
+        <p><strong>doliv</strong> says:</p>
+        <p>
+            This contest ROCKS!!! My homepage has 47 animated
+            GIFs and a MIDI soundtrack. Please vote for me!!!
+        </p>
+        <hr>
+        <p><strong>alesaba</strong> says:</p>
+        <p>
+            poppatina?
+        </p>
+        <hr>
+        <p><strong>pysu</strong> says:</p>
+        <p>
+            Real designers use tables for layout. CSS is just
+            a fad. Change my mind.
+        </p>
+        <hr>
+        <p><strong>glordle</strong> says:</p>
+        <p>
+            wordle?
+        </p>
+        <hr>
+        <p><strong>yangr</strong> says:</p>
+        <p>
+            오빤 강남스타일
+        </p>
+    </div>
+
+    <h2 id="submit">Submit Your Design for Judging</h2>
+
+    <p>
+        Ready to claim your place in Internet history?
+        Submit your design below. Webmaster tol0 will visit
+        your page and decide whether it deserves a prize.
+    </p>
+
+    <p>
+        <strong>Proof of Work Required</strong>
+    </p>
+
+    <label for="powInput">Contest entry verification:</label>
+    <input
+            id="powInput"
+            name="pow"
+            size="60"
+            autocomplete="off"
+            placeholder="Enter your verification token"
+    >
+
+    <p class="small">
+        Generate your token with:<br>
+        <code>hashcash -mCb{{pow_bits}} "{{resource}}"</code>
+    </p>
+
+    <button id="reportCss">
+        SUBMIT MY ENTRY TO THE JUDGES!
+    </button>
+
+    <div class="footer">
+        <p>
+            <strong>SRDNLEN CONTEST 2003</strong>
+        </p>
+        Powered by HTML, dreams, and hopes.<br><br>
+        <span class="blink">★ ENJOY YOUR STAY IN CAGLIARI ★</span>
+    </div>
+
+</div>
+
+<style>
+    {{ css }}
+</style>
+
+<script nonce="{{ nonce }}">
+    function base64urlEncode(input) {
+        return btoa(input)
+            .replace(/\+/g, "-")
+            .replace(/\//g, "_");
+    }
+
+    function loadCSS() {
+        const css = document.getElementById("cssInput").value;
+        const encoded = base64urlEncode(
+            unescape(encodeURIComponent(css))
+        );
+        window.location.href = "/?css=" + encoded;
+    }
+
+    async function reportCSS() {
+        const params = new URLSearchParams(window.location.search);
+        const css = params.get("css") || "";
+        const pow = document.getElementById("powInput").value;
+
+        const body = new URLSearchParams({
+            css,
+            pow
+        });
+
+        try {
+            const res = await fetch("/report", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: body.toString(),
+            });
+
+            if (!res.ok) {
+                throw new Error(await res.text());
+            }
+
+            alert(
+                "Your entry has been submitted! Webmaster Dave will review it soon."
+            );
+        } catch (e) {
+            alert(`Submission failed: ${e}. Please try again.`);
+        }
+    }
+
+    document.getElementById("applyCss").addEventListener("click", loadCSS);
+    document.getElementById("reportCss").addEventListener("click", reportCSS);
+</script>
+</body>
+</html>

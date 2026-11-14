@@ -1,0 +1,13 @@
+:root { font: 14px/1.5 "Avenir Next", Avenir, system-ui, sans-serif; color: #4b3822; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.widget { display: flex; flex-direction: column; height: 100vh; }
+.messages { flex: 1; overflow: auto; padding: 18px 16px; }
+.message { max-width: 90%; margin: 0 0 13px; padding: 10px 12px; border-radius: 8px; background: #fff2c8; overflow-wrap: anywhere; }
+.message.user { margin-left: auto; background: #fff0c8; }
+.widget form { display: flex; gap: 7px; padding: 11px; border-top: 1px solid #e6d3a1; }
+.widget input { min-width: 0; flex: 1; padding: 9px 10px; border: 1px solid #d6bd83; border-radius: 6px; font: inherit; }
+.widget button { padding: 8px 13px; border: 0; border-radius: 6px; background: #4b3822; color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+.widget button:disabled { opacity: .5; cursor: default; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+:focus-visible { outline: 2px solid #ddaa35; outline-offset: 2px; }

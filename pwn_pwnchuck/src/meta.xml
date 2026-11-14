@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<app version="1">
+	<name>PwnChuck</name>
+	<coder>PwnChuck</coder>
+	<version>0.1</version>
+	<release_date>20260930000000</release_date>
+	<short_description>The sky is full of stars</short_description>
+	<long_description>A mansion of four rooms, a remote that tilts, and a weird dude called Chuck.
+		Its books are balanced, its map is complete, and its walls are very sure of themselves.
+		Find the room the map forgot, and bring back what it is hiding.</long_description>
+</app>

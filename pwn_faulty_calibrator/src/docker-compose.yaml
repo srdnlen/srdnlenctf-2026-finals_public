@@ -1,0 +1,8 @@
+services:
+    pwn-faulty:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: unless-stopped
+        ports:
+            - 2060:2060

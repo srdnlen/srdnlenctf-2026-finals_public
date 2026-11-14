@@ -1,0 +1,13 @@
+services:
+  challenge:
+    build: .
+    image: ghcr.io/srdnlen/srdnlenctf-2026/images/late_night_dirty_talk:latest
+    environment:
+      FLAG: "srdnlen{d1rty_sock3t_desynchronization_1s_f4n}"
+    expose:
+      - "8000"
+    labels:
+      klodd.expose: "true"
+      klodd.kind: "http"
+      klodd.port: "8000"
+      klodd.timeout: "900000"

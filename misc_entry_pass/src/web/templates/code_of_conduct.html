@@ -1,0 +1,88 @@
+{% extends "_base.html" %}
+{% block title %}Code of conduct{% endblock %}
+{% block head %}
+<style>
+  .doc { max-width: 760px; padding: 52px 0 96px; }
+  .doc .eyebrow { font-family: var(--m); font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--flame); margin: 0 0 14px; }
+  .doc h1 { font-family: var(--d); font-weight: 800; font-size: clamp(2rem, 5vw, 2.6rem); line-height: 1.08; margin: 0 0 14px; }
+  .doc .lede { color: var(--sage); font-size: 1.05rem; line-height: 1.6; max-width: 62ch; margin: 0 0 18px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; }
+  .meta span { font-family: var(--m); font-size: .68rem; letter-spacing: .04em; color: var(--sage); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; }
+
+  .principle { display: grid; grid-template-columns: 40px 1fr; gap: 20px; padding: 28px 0; border-top: 1px solid var(--line); }
+  .principle .n { font-family: var(--m); font-size: .82rem; color: var(--flame); letter-spacing: .06em; padding-top: 4px; }
+  .principle h2 { font-family: var(--d); font-weight: 600; font-size: 1.15rem; margin: 0 0 10px; color: var(--sand); }
+  .principle p { color: var(--sage); line-height: 1.6; margin: 0; max-width: 60ch; }
+  .principle ul { margin: 0; padding-left: 1.1em; color: var(--sage); }
+  .principle li { margin: 7px 0; line-height: 1.55; }
+  .principle li::marker { color: var(--sage-dim); }
+
+  .callout { margin-top: 30px; border: 1px solid var(--line); border-left: 3px solid var(--flame); border-radius: 10px; background: rgba(240,83,31,.06); padding: 20px 22px; }
+  .callout h2 { font-family: var(--d); font-weight: 600; font-size: 1.08rem; margin: 0 0 10px; color: var(--sand); }
+  .callout p { color: var(--sand); line-height: 1.6; margin: 0; }
+  .callout a { color: var(--flame); }
+  .callout a:hover { text-decoration: underline; }
+
+  .agree { margin-top: 30px; color: var(--sage-dim); font-size: .9rem; font-style: italic; }
+</style>
+{% endblock %}
+{% block content %}
+<article class="doc">
+  <p class="eyebrow">// Policy</p>
+  <h1>Code of conduct</h1>
+  <p class="lede">
+    Sardinia Cyber Camp is organised by Sardinia Len APS and is dedicated to a
+    harassment-free, welcoming experience for everyone (competitors, speakers,
+    attendees, staff and volunteers) regardless of background, identity or
+    experience level.
+  </p>
+  <div class="meta">
+    <span>Applies to all attendees</span>
+    <span>28-30 October 2026 · Fiera Internazionale della Sardegna</span>
+  </div>
+
+  <section class="principle">
+    <div class="n">01</div>
+    <div>
+      <h2>Be respectful</h2>
+      <p>Treat everyone with respect. Harassment, discrimination, intimidation and
+        personal attacks are not tolerated in talks, during the CTF, in common areas
+        or in online channels tied to the event.</p>
+    </div>
+  </section>
+
+  <section class="principle">
+    <div class="n">02</div>
+    <div>
+      <h2>Compete fairly</h2>
+      <ul>
+        <li>Attack only the infrastructure the competition scopes in. Shared event
+          systems, the venue network and other attendees' devices are off limits.</li>
+        <li>Don't disrupt the event: no flooding of shared services, no interfering with
+          other teams, no sharing of flags outside your team.</li>
+        <li>Follow the instructions of organisers and venue staff at all times.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="principle">
+    <div class="n">03</div>
+    <div>
+      <h2>Respect the venue</h2>
+      <p>Fiera Internazionale della Sardegna is a shared exhibition space. Look after it, follow on-site safety
+        guidance, and keep access routes and fire exits clear.</p>
+    </div>
+  </section>
+
+  <div class="callout">
+    <h2>Reporting a problem</h2>
+    <p>If you experience or witness a breach of this code, contact a member of staff at
+      the registration desk or reach the organisers through
+      <a href="https://srdnlen.it" class="ext">srdnlen.it</a>. Reports are handled
+      discreetly. Organisers may take any action they consider appropriate, including
+      removal from the event without refund.</p>
+  </div>
+
+  <p class="agree">By attending, you agree to follow this code of conduct for the duration of the event.</p>
+</article>
+{% endblock %}

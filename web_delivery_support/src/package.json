@@ -1,0 +1,14 @@
+{
+  "name": "porter-parcel-support",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/widget.js --bundle --minify --format=iife --outfile=dist/widget.js"
+  },
+  "dependencies": {
+    "express": "5.2.1",
+    "preact": "10.29.8"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}

@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5050:5050"
+    environment:
+      FLASK_DEBUG: False
+      FLAG: ${FLAG:-srdnlen{redacted}}

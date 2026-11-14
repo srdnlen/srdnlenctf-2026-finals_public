@@ -1,0 +1,14 @@
+services:
+  valkey2shell:
+    build: .
+    image: ghcr.io/srdnlen/srdnlenctf-2026/images/valkey2shell:latest
+    expose:
+      - "6379"
+    labels:
+      klodd.expose: "true"
+      klodd.egress: "true"
+      klodd.kind: "tcp"
+      klodd.port: "6379"
+      klodd.timeout: "900000"
+    cap_drop:
+      - ALL

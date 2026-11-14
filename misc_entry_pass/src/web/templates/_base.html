@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Entry Pass{% endblock %} | Sardinia Cyber Camp</title>
+<meta name="description" content="Generate your Sardinia Cyber Camp II entry pass for Srdnlen CTF Finals, Cagliari, 28-30 October 2026.">
+<link rel="icon" href="/static/srdnlen-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #0e1a17;
+    --surface: #13231f;
+    --inset: #0a1310;
+    --line: #26382f;
+    --sand: #ece7dd;
+    --sage: #8fa89b;
+    --sage-dim: #5f7369;
+    --flame: #f0531f;
+    --d: 'Archivo Expanded', 'Archivo', sans-serif;
+    --s: 'Archivo', system-ui, sans-serif;
+    --m: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--ink); color: var(--sand);
+    font-family: var(--s); font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh; display: flex; flex-direction: column;
+  }
+  a { color: var(--sand); text-decoration: none; }
+  a:hover { color: var(--flame); }
+
+  .masthead {
+    display: flex; align-items: center; gap: 14px;
+    max-width: 1060px; margin: 0 auto; padding: 22px 28px;
+  }
+  .mark { display: flex; align-items: center; gap: 11px; }
+  .mark img { display: block; }
+  .mark b {
+    font-family: var(--d); font-weight: 700; font-size: 1rem;
+    letter-spacing: .01em;
+  }
+  .masthead nav { margin-left: auto; display: flex; align-items: baseline; gap: 26px; }
+  .masthead nav a {
+    color: var(--sage); font-size: .92rem;
+  }
+  .masthead nav a[aria-current] { color: var(--sand); }
+  a.ext::after { content: '↗'; font-size: .72em; margin-left: 3px; color: var(--sage-dim); vertical-align: 1px; }
+  .who { display: flex; align-items: baseline; gap: inherit; font-size: .92rem; }
+  .who a.u { color: var(--sand); border-bottom: 1px solid transparent; }
+  .who a.u:hover { color: var(--flame); }
+  .who a.u[aria-current] { border-bottom-color: var(--line); }
+  .who .role { font-family: var(--m); font-size: .64rem; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--sage); border: 1px solid var(--line); border-radius: 5px; padding: 2px 7px; }
+  .who form { margin: 0; }
+  .who button { font-family: var(--s); font-size: .92rem; line-height: inherit; color: var(--sage); background: none; border: 0; cursor: pointer; padding: 0; }
+  .who button:hover { color: var(--flame); }
+  .rule { height: 1px; background: var(--line); border: 0; margin: 0; }
+
+  main { max-width: 1060px; width: 100%; margin: 0 auto; padding: 0 28px; flex: 1 0 auto; }
+
+  .prose { max-width: 60ch; padding: 46px 0 80px; }
+  .prose h1 {
+    font-family: var(--d); font-weight: 800; font-size: 2.1rem;
+    line-height: 1.1; margin: 0 0 18px;
+  }
+  .prose h2 {
+    font-family: var(--d); font-weight: 600; font-size: 1.15rem;
+    margin: 36px 0 10px;
+  }
+  .prose p { color: var(--sand); margin: 0 0 14px; }
+  .prose a { color: var(--flame); }
+  .prose a:hover { text-decoration: underline; }
+  .prose ul { padding-left: 1.1em; margin: 0 0 14px; }
+  .prose li { margin: 8px 0; }
+  .prose li::marker { color: var(--sage-dim); }
+  code {
+    font-family: var(--m); font-size: .88em; color: var(--sand);
+    background: var(--inset); padding: 1px 6px; border-radius: 4px;
+  }
+
+  footer {
+    max-width: 1060px; margin: 0 auto; padding: 36px 28px 44px;
+    color: var(--sage-dim); font-size: .85rem;
+    display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 28px 24px;
+  }
+  footer a { color: var(--sage); }
+  footer a:hover { color: var(--flame); }
+  .f-brand { display: flex; flex-direction: column; gap: 6px; }
+  .f-brand b { font-family: var(--d); font-weight: 700; color: var(--sand); font-size: .95rem; }
+  .f-links, .f-org { display: flex; flex-direction: column; gap: 9px; }
+  .f-h { font-family: var(--m); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--sage-dim); margin-bottom: 2px; }
+
+  @media (max-width: 760px) {
+    footer { grid-template-columns: 1fr 1fr; }
+    .f-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 640px) {
+    .masthead { padding: 18px 20px; }
+    main { padding: 0 20px; }
+    .masthead nav { gap: 16px; flex-wrap: wrap; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+{% block head %}{% endblock %}
+</head>
+<body>
+  <header>
+    <div class="masthead">
+      <a href="/" class="mark">
+        <img src="/static/srdnlen-logo.png" alt="" width="28" height="35">
+        <b>Sardinia Cyber Camp</b>
+      </a>
+      <nav>
+        <a href="https://cybercamp.srdnlen.it/program" class="ext">Programme</a>
+        <a href="https://cybercamp.srdnlen.it/venue-travel" class="ext">Venue</a>
+        <a href="/faq"{% if active == 'faq' %} aria-current="page"{% endif %}>FAQ</a>
+        {% if g.user %}
+        <a href="/"{% if active == 'pass' %} aria-current="page"{% endif %}>Pass</a>
+        <div class="who">
+          <a class="u" href="/profile"{% if active == 'profile' %} aria-current="page"{% endif %}>{{ g.user['username'] }}</a>
+          <form method="post" action="/logout"><button type="submit">Logout</button></form>
+        </div>
+        {% else %}
+        <a href="/login"{% if active == 'login' %} aria-current="page"{% endif %}>Login</a>
+        <a href="/register"{% if active == 'register' %} aria-current="page"{% endif %}>Register</a>
+        {% endif %}
+      </nav>
+    </div>
+    <hr class="rule">
+  </header>
+
+  <main>{% block content %}{% endblock %}</main>
+
+  <hr class="rule">
+  <footer>
+    <div class="f-brand">
+      <b>Sardinia Cyber Camp II</b>
+      <span>Srdnlen CTF Finals · Conference · Recruiting</span>
+      <span>28-30 October 2026 @ Fiera Internazionale della Sardegna, Viale Armando Diaz 221, Cagliari (IT)</span>
+    </div>
+    <nav class="f-links" aria-label="Event">
+      <span class="f-h">Event</span>
+      <a href="https://cybercamp.srdnlen.it" class="ext">Event site</a>
+      <a href="https://cybercamp.srdnlen.it/program" class="ext">Programme</a>
+      <a href="https://cybercamp.srdnlen.it/venue-travel" class="ext">Venue &amp; travel</a>
+      <a href="https://cybercamp.srdnlen.it/editions" class="ext">Past editions</a>
+    </nav>
+    <nav class="f-links" aria-label="Passes">
+      <span class="f-h">Passes</span>
+      <a href="/faq">Pass FAQ</a>
+      <a href="/code-of-conduct">Code of conduct</a>
+      <a href="https://cybercamp.srdnlen.it/about" class="ext">About the camp</a>
+    </nav>
+    <div class="f-org">
+      <span class="f-h">Organiser</span>
+      <a href="https://srdnlen.it" class="ext">Sardinia Len APS</a>
+      <span>srdnlen.it</span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+services:
+  challenge:
+    build: .
+    environment:
+      FLAG: "srdnlen{d1rty_sock3t_desynchronization_1s_f4n}"
+    ports:
+      - "80:8000"
+    restart: unless-stopped

@@ -1,0 +1,68 @@
+{% extends "_base.html" %}
+{% block title %}Register{% endblock %}
+{% block head %}
+<style>
+  .auth { max-width: 420px; margin: 0 auto; padding: 56px 0 90px; }
+  .auth h1 { font-family: var(--d); font-weight: 800; font-size: 1.9rem; line-height: 1.1; margin: 0 0 8px; }
+  .auth .sub { color: var(--sage); margin: 0 0 30px; }
+  .auth .field { margin-top: 18px; }
+  .auth label { display: block; font-size: .9rem; font-weight: 500; margin-bottom: 8px; }
+  .auth input[type=text], .auth input[type=password] {
+    width: 100%; background: var(--inset); color: var(--sand); border: 1px solid var(--line);
+    border-radius: 7px; padding: 11px 13px; font-family: var(--m); font-size: .9rem; transition: border-color .15s;
+  }
+  .auth input:focus { outline: none; border-color: var(--flame); }
+  .auth input::placeholder { color: var(--sage-dim); }
+  .auth .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+  .auth .duo .field { margin-top: 0; }
+  .auth .go { font-family: var(--s); font-weight: 600; font-size: .95rem; background: var(--flame); color: #fff;
+    border: 0; border-radius: 7px; padding: 12px 22px; cursor: pointer; width: 100%; margin-top: 26px; }
+  .auth .go:hover { background: #ff6334; }
+  .auth .alt { color: var(--sage); font-size: .9rem; margin-top: 20px; text-align: center; }
+  .auth .alt a { color: var(--flame); }
+  .auth .alt a:hover { text-decoration: underline; }
+  .err { border: 1px solid var(--flame); background: rgba(240,83,31,.07); color: var(--sand); border-radius: 7px;
+    padding: 11px 14px; margin-bottom: 20px; font-family: var(--m); font-size: .84rem; }
+  .hint { color: var(--sage-dim); font-size: .78rem; margin-top: 8px; }
+</style>
+{% endblock %}
+{% block content %}
+<div class="auth">
+  <h1>Create an account</h1>
+  <p class="sub">Register to build your Sardinia Cyber Camp entry pass.</p>
+
+  {% if error %}<div class="err">{{ error }}</div>{% endif %}
+
+  <form method="post" action="/register">
+    <div class="field">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" value="{{ username }}" autocomplete="username"
+             maxlength="32" placeholder="3-32 chars, letters/digits/_-." required autofocus>
+      <p class="hint">Also your nickname on the pass.</p>
+    </div>
+    <div class="duo">
+      <div class="field">
+        <label for="first_name">First name</label>
+        <input type="text" id="first_name" name="first_name" value="{{ first_name }}" maxlength="48" required>
+      </div>
+      <div class="field">
+        <label for="last_name">Last name</label>
+        <input type="text" id="last_name" name="last_name" value="{{ last_name }}" maxlength="48" required>
+      </div>
+    </div>
+    <div class="field">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" autocomplete="new-password"
+             maxlength="128" placeholder="at least 8 characters" required>
+    </div>
+    <div class="field">
+      <label for="confirm">Confirm password</label>
+      <input type="password" id="confirm" name="confirm" autocomplete="new-password" maxlength="128" required>
+    </div>
+
+    <button type="submit" class="go">Create account</button>
+  </form>
+
+  <p class="alt">Already have an account? <a href="/login">Login</a>.</p>
+</div>
+{% endblock %}

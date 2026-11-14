@@ -1,0 +1,128 @@
+{% extends "_base.html" %}
+{% block title %}Pass FAQ{% endblock %}
+{% block head %}
+<style>
+  .doc { max-width: 760px; padding: 52px 0 96px; }
+  .doc .eyebrow { font-family: var(--m); font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--flame); margin: 0 0 14px; }
+  .doc h1 { font-family: var(--d); font-weight: 800; font-size: clamp(2rem, 5vw, 2.6rem); line-height: 1.08; margin: 0 0 14px; }
+  .doc .lede { color: var(--sage); font-size: 1.05rem; line-height: 1.55; max-width: 60ch; margin: 0 0 30px; }
+  .doc .lede a { color: var(--flame); }
+  .doc .lede a:hover { text-decoration: underline; }
+
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+  .toc a { font-family: var(--m); font-size: .72rem; letter-spacing: .04em; color: var(--sage); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; transition: border-color .15s, color .15s; }
+  .toc a:hover { border-color: var(--flame); color: var(--sand); }
+
+  .group { margin-top: 46px; scroll-margin-top: 90px; }
+  .group > .gh { font-family: var(--m); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--sage-dim); margin: 0 0 6px; }
+
+  details.qa { border-top: 1px solid var(--line); }
+  .group details.qa:last-of-type { border-bottom: 1px solid var(--line); }
+  details.qa summary {
+    list-style: none; cursor: pointer; display: flex; align-items: center; gap: 14px;
+    padding: 17px 2px; min-height: 44px; font-size: 1.02rem; font-weight: 500; color: var(--sand);
+  }
+  details.qa summary::-webkit-details-marker { display: none; }
+  details.qa summary:focus-visible { outline: 2px solid var(--flame); outline-offset: 3px; border-radius: 4px; }
+  summary .q { flex: 1; }
+  summary .chev { flex: none; width: 18px; height: 18px; color: var(--sage); transition: transform .2s ease, color .2s ease; }
+  details[open] summary .chev { transform: rotate(180deg); color: var(--flame); }
+  details.qa .a { color: var(--sage); font-size: .96rem; line-height: 1.6; padding: 0 2px 20px; max-width: 62ch; }
+  details.qa .a a { color: var(--flame); }
+  details.qa .a a:hover { text-decoration: underline; }
+
+  .help { margin-top: 48px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding: 20px 22px; color: var(--sage); font-size: .95rem; }
+  .help b { color: var(--sand); font-weight: 600; }
+  .help a { color: var(--flame); }
+  .help a:hover { text-decoration: underline; }
+</style>
+{% endblock %}
+{% block content %}
+<article class="doc">
+  <p class="eyebrow">// Help</p>
+  <h1>Pass FAQ</h1>
+  <p class="lede">
+    Everything about the entry-pass generator for Sardinia Cyber Camp II. For the
+    programme, venue and travel, see the
+    <a href="https://cybercamp.srdnlen.it" class="ext">main event site</a>.
+  </p>
+
+  <nav class="toc" aria-label="Sections">
+    <a href="#getting">Getting your pass</a>
+    <a href="#onpass">On the pass</a>
+    <a href="#logistics">Logistics &amp; privacy</a>
+  </nav>
+
+  {% set chev %}<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>{% endset %}
+
+  <section class="group" id="getting">
+    <p class="gh">Getting your pass</p>
+
+    <details class="qa" open>
+      <summary><span class="q">Who needs a pass?</span>{{ chev }}</summary>
+      <div class="a">Everyone attending on site at Fiera Internazionale della Sardegna: CTF finalists, conference
+        attendees, speakers and staff. The pass is your credential at the registration
+        desk and inside the venue.</div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="q">How do I get one?</span>{{ chev }}</summary>
+      <div class="a">Create an account, complete your profile once, then generate your pass.
+        You can regenerate it any time before the event, the latest download is the one
+        to bring.</div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="q">I'm a speaker or staff: my pass looks different.</span>{{ chev }}</summary>
+      <div class="a">Speaker and staff passes carry extra fields (talk title, staff area), a
+        different accent colour, and are provisioned by the organisers. If your role is
+        wrong, contact the organising team and we'll fix it before you print.</div>
+    </details>
+  </section>
+
+  <section class="group" id="onpass">
+    <p class="gh">On the pass</p>
+
+    <details class="qa">
+      <summary><span class="q">What's printed on the pass?</span>{{ chev }}</summary>
+      <div class="a">Your name, your nickname, your role, your country and team (if set), and
+        your photo if you uploaded one. It's an A6 card designed to print cleanly in black
+        and white or colour, with a role-coloured band so staff can read your role at a
+        glance.</div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="q">Can I change my details later?</span>{{ chev }}</summary>
+      <div class="a">Yes. Update your <a href="/profile">profile</a> and generate the pass
+        again. Your username and nickname are fixed at sign-up; the rest can change.</div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="q">Photo requirements</span>{{ chev }}</summary>
+      <div class="a">PNG, JPEG or WEBP, up to 3&nbsp;MB.</div>
+    </details>
+  </section>
+
+  <section class="group" id="logistics">
+    <p class="gh">Logistics &amp; privacy</p>
+
+    <details class="qa">
+      <summary><span class="q">Do I have to print it?</span>{{ chev }}</summary>
+      <div class="a">No, a copy on your phone works at the desk. A printed A6 card is handier
+        to wear for the three days, though.</div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="q">What happens to my data?</span>{{ chev }}</summary>
+      <div class="a">Pass data stays with the organisers (Sardinia Len APS) and is used only
+        to issue your credential and run the event. See the
+        <a href="/code-of-conduct">code of conduct</a> for on-site expectations.</div>
+    </details>
+  </section>
+
+  <div class="help">
+    <b>Still stuck?</b> Reach the organisers at
+    <a href="https://srdnlen.it" class="ext">srdnlen.it</a> or ask at the registration desk during the event.
+  </div>
+</article>
+{% endblock %}

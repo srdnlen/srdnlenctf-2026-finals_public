@@ -1,0 +1,71 @@
+{% extends "_base.html" %}
+{% block title %}Entry passes{% endblock %}
+{% block head %}
+<style>
+  .hero { padding: 64px 0 20px; max-width: 760px; }
+  .eyebrow { font-family: var(--m); font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--flame); margin: 0 0 18px; }
+  .hero h1 { font-family: var(--d); font-weight: 800; font-size: clamp(2.3rem, 6vw, 3.4rem); line-height: 1.04; letter-spacing: -.01em; margin: 0 0 20px; }
+  .hero h1 .ed { color: var(--sage); }
+  .hero .lede { color: var(--sand); font-size: 1.1rem; line-height: 1.55; max-width: 60ch; margin: 0 0 26px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 32px; }
+  .fact { font-family: var(--m); font-size: .78rem; color: var(--sage); border: 1px solid var(--line); border-radius: 7px; padding: 8px 12px; }
+  .fact b { color: var(--sand); font-weight: 500; }
+  .cta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .btn { font-family: var(--s); font-weight: 600; font-size: .98rem; border-radius: 8px; padding: 13px 24px; cursor: pointer; border: 1px solid transparent; }
+  .btn.pri { background: var(--flame); color: #fff; }
+  .btn.pri:hover { background: #ff6334; }
+  .btn.sec { background: transparent; color: var(--sand); border-color: var(--line); }
+  .btn.sec:hover { border-color: var(--flame); color: var(--flame); }
+
+  .how { border-top: 1px solid var(--line); margin-top: 56px; padding: 44px 0 80px; }
+  .how .h { font-family: var(--m); font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-dim); margin: 0 0 26px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .step { border: 1px solid var(--line); border-radius: 12px; padding: 22px; background: var(--surface); }
+  .step .n { font-family: var(--m); font-size: .72rem; color: var(--flame); letter-spacing: .1em; }
+  .step h3 { font-family: var(--d); font-weight: 600; font-size: 1.05rem; margin: 10px 0 8px; }
+  .step p { color: var(--sage); font-size: .92rem; line-height: 1.5; margin: 0; }
+  @media (max-width: 720px) { .steps { grid-template-columns: 1fr; } }
+</style>
+{% endblock %}
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">Srdnlen CTF Finals · 2026</p>
+  <h1>Sardinia Cyber Camp <span class="ed">II</span></h1>
+  <p class="lede">
+    Three days in Cagliari bringing international CTF teams together with security
+    researchers, companies, institutions and the public, for the Srdnlen CTF
+    Finals, a public cybersecurity conference, and recruiting. This is where you
+    create and print your entry pass for the venue.
+  </p>
+  <div class="facts">
+    <span class="fact"><b>28-30 October 2026</b></span>
+    <span class="fact">Fiera Internazionale della Sardegna · <b>Cagliari</b></span>
+    <span class="fact">Viale Armando Diaz 221</span>
+  </div>
+  <div class="cta">
+    <a href="/register" class="btn pri">Create your pass</a>
+    <a href="/login" class="btn sec">I already have an account</a>
+  </div>
+</section>
+
+<section class="how">
+  <p class="h">// How the pass works</p>
+  <div class="steps">
+    <div class="step">
+      <span class="n">01</span>
+      <h3>Create an account</h3>
+      <p>Register with your name and a nickname. Your nickname is printed on the pass as your on-site identifier.</p>
+    </div>
+    <div class="step">
+      <span class="n">02</span>
+      <h3>Fill your profile</h3>
+      <p>Add your details and an optional photo once. Every pass you generate starts from your saved profile.</p>
+    </div>
+    <div class="step">
+      <span class="n">03</span>
+      <h3>Generate &amp; print</h3>
+      <p>Download a print-ready A6 PDF credential. Bring it printed or on your phone to the registration desk.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
